@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>Rules • Pi Master</title>
+
+
+<!-- Shared CSS -->
+
+<link rel="stylesheet" href="/css/variables.css">
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/css/navigation.css">
+<link rel="stylesheet" href="/css/cards.css">
+<link rel="stylesheet" href="/css/buttons.css">
+
+
+<!-- Rules CSS -->
+
+<link
+    rel="stylesheet"
+    href="/css/rules.css?v=3">
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     Navigation
+========================================================= -->
+
+<nav>
+
+
+<div class="nav-container">
+
+
+    <!-- Logo -->
+
+    <a
+        href="/"
+        class="logo">
+
+        <img
+            src="/images/logo.png"
+            alt="Pi Master Logo">
+
+        <span>
+            Pi Master
+        </span>
+
+    </a>
+
+
+    <!-- Desktop Navigation -->
+
+    <div class="nav-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/status.html">
+            Status
+        </a>
+
+        <a href="/news.html">
+            News
+        </a>
+
+        <a href="/gallery.html">
+            Gallery
+        </a>
+
+        <a href="/community.html">
+            Community
+        </a>
+
+        <a
+            href="/rules.html"
+            class="active">
+            Rules
+        </a>
+
+    </div>
+
+
+    <!-- Mobile Menu Button -->
+
+    <button
+        class="mobile-menu"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false">
+
+        ☰
+
+    </button>
+
+</div>
+
+
+<!-- Mobile Navigation -->
+
+<div class="mobile-nav">
+
+    <a href="/">
+        Home
+    </a>
+
+    <a href="/status.html">
+        Status
+    </a>
+
+    <a href="/news.html">
+        News
+    </a>
+
+    <a href="/gallery.html">
+        Gallery
+    </a>
+
+    <a href="/community.html">
+        Community
+    </a>
+
+    <a
+        href="/rules.html"
+        class="active">
+        Rules
+    </a>
+
+</div>
+
+</nav>
+
+<!-- =========================================================
+     Main Content
+========================================================= -->
+
+<main class="container-wide rules-page">
+
+<!-- =====================================================
+     Page Header
+====================================================== -->
+
+<section class="page-header rules-page-header">
+
+    <div>
+
+        <p class="eyebrow">
+            PI MASTER
+        </p>
+
+        <h1>
+            Server Rules
+        </h1>
+
+        <p>
+            The rules that help keep Pi Master fair,
+            friendly and enjoyable for everyone.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     Server Rules
+====================================================== -->
+
+<section class="rules-section">
+
+    <div class="rules-card">
+
+        <h2>
+            Server Rules
+        </h2>
+
+
+        <ul class="rules-list">
+
+            <li>
+                Do not kill another player.
+            </li>
+
+            <li>
+                Do not rob another player.
+            </li>
+
+            <li>
+                Do not destroy player-built structures
+                without permission of the owner.
+            </li>
+
+            <li>
+                Be respectful and kind to one another.
+            </li>
+
+            <li>
+                No TNT within 100 blocks of another
+                person's base, including the air space
+                within the 100-block radius.
+            </li>
+
+            <li>
+                No unorganized PvP.
+
+                <ol
+                    class="rules-sublist"
+                    type="a">
+
+                    <li>
+                        During organized PvP, you may
+                        ignore Rule 1.
+                    </li>
+
+                </ol>
+
+            </li>
+
+            <li>
+                Before building large redstone machines,
+                consult a server admin for permission.
+            </li>
+
+            <li>
+                No x-ray mods or glitches.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     Large Redstone Machines
+====================================================== -->
+
+<section class="rules-section">
+
+    <div class="rules-card">
+
+        <h2>
+            Large Redstone Machines
+        </h2>
+
+
+        <p>
+            A large redstone machine can contain many
+            different redstone components. Each component
+            has a <strong>redstone value</strong> based on
+            how much redstone is needed to craft it.
+        </p>
+
+
+        <h3>
+            Redstone Values
+        </h3>
+
+
+        <ul class="redstone-values">
+
+            <li>
+                <strong>Redstone dust = 1</strong>
+            </li>
+
+            <li>
+                <strong>Redstone torch = 1</strong>,
+                because it uses 1 redstone dust.
+            </li>
+
+            <li>
+                <strong>Observer = 2</strong>,
+                because it uses 2 redstone dust.
+            </li>
+
+            <li>
+                <strong>Repeater = 3</strong>,
+                because it uses 2 redstone torches
+                and 1 redstone dust.
+            </li>
+
+        </ul>
+
+
+
+        <!-- Example -->
+
+        <div class="redstone-example">
+
+            <h3>
+                Example
+            </h3>
+
+            <p>
+                A machine contains:
+            </p>
+
+
+            <ul>
+
+                <li>
+                    10 redstone dust
+                </li>
+
+                <li>
+                    4 redstone torches
+                </li>
+
+                <li>
+                    3 repeaters
+                </li>
+
+                <li>
+                    2 observers
+                </li>
+
+            </ul>
+
+
+            <p>
+                Its redstone value is calculated as:
+            </p>
+
+
+            <div class="redstone-calculation">
+
+                10 + 4 + (3 × 3) + (2 × 2) = 27 redstone
+
+            </div>
+
+
+            <p>
+                The machine therefore has a
+                <strong>redstone value of 27</strong>.
+            </p>
+
+        </div>
+
+
+
+        <!-- Approval -->
+
+        <div class="rules-warning">
+
+            <h3>
+                Approval Required
+            </h3>
+
+            <p>
+                A machine that has a redstone value
+                <strong>greater than 32</strong> must be
+                approved by a server admin before it is built.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+<!-- =========================================================
+     Footer
+========================================================= -->
+
+<footer>
+
+
+<div class="container-small">
+
+    <h3>
+        Pi Master
+    </h3>
+
+    <p>
+        Enterprise Minecraft Bedrock Server
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 Pi Master
+    </p>
+
+</div>
+
+</footer>
+
+<!-- =========================================================
+     Mobile Navigation
+========================================================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        const mobileMenu =
+            document.querySelector(".mobile-menu");
+
+        const mobileNav =
+            document.querySelector(".mobile-nav");
+
+
+        if (
+            !mobileMenu ||
+            !mobileNav
+        ) {
+            return;
+        }
+
+
+        mobileMenu.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+
+                const isOpen =
+                    mobileNav.classList.toggle("open");
+
+
+                mobileMenu.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+
+                mobileMenu.setAttribute(
+                    "aria-label",
+                    isOpen
+                        ? "Close navigation menu"
+                        : "Open navigation menu"
+                );
+
+            }
+        );
+
+
+        mobileNav
+            .querySelectorAll("a")
+            .forEach(
+                link => {
+
+                    link.addEventListener(
+                        "click",
+                        () => {
+
+                            mobileNav.classList.remove("open");
+
+                            mobileMenu.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                            mobileMenu.setAttribute(
+                                "aria-label",
+                                "Open navigation menu"
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+        document.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    !mobileNav.contains(event.target) &&
+                    !mobileMenu.contains(event.target)
+                ) {
+
+                    mobileNav.classList.remove("open");
+
+                    mobileMenu.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    mobileMenu.setAttribute(
+                        "aria-label",
+                        "Open navigation menu"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

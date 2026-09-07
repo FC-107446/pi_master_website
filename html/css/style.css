@@ -1,0 +1,18 @@
+@import url("variables.css");
+@import url("reset.css");
+@import url("layout.css");
+@import url("navigation.css");
+@import url("cards.css");
+@import url("buttons.css");
+@import url("forms.css");
+
+@import url("homepage.css");
+@import url("status.css");
+@import url("news.css");
+@import url("gallery.css");
+@import url("community.css");
+@import url("rules.css");
+@import url("admin.css");
+
+@import url("footer.css");
+@import url("utilities.css");

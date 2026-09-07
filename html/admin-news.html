@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>News Management • Pi Master</title>
+
+
+    <!-- Shared CSS -->
+
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/cards.css">
+    <link rel="stylesheet" href="/css/buttons.css">
+
+
+    <!-- Admin News CSS -->
+
+    <link rel="stylesheet" href="/css/admin-news.css">
+
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     Navigation
+===================================================== -->
+
+<nav>
+
+    <div class="nav-container">
+
+
+        <a
+            href="/"
+            class="logo">
+
+            <img
+                src="/images/logo.png"
+                alt="Pi Master Logo">
+
+            <span>
+                Pi Master
+            </span>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/status.html">
+                Status
+            </a>
+
+            <a href="/news.html">
+                News
+            </a>
+
+            <a href="/gallery.html">
+                Gallery
+            </a>
+
+            <a href="/community.html">
+                Community
+            </a>
+
+            <a href="/rules.html">
+                Rules
+            </a>
+
+        </div>
+
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     Main
+===================================================== -->
+
+<main class="container admin-news-page">
+
+
+    <!-- =================================================
+         Header
+    ================================================== -->
+
+    <section class="page-header">
+
+        <p class="eyebrow">
+            ADMINISTRATION
+        </p>
+
+
+        <h1>
+            News Management
+        </h1>
+
+
+        <p>
+            Create, edit and manage news articles published
+            on the Pi Master website.
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================================
+         Statistics
+    ================================================== -->
+
+    <section class="admin-news-stats">
+
+
+        <div class="admin-stat-card">
+
+            <span>
+                Total Articles
+            </span>
+
+            <strong id="totalCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <span>
+                Published
+            </span>
+
+            <strong id="publishedCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <span>
+                Drafts
+            </span>
+
+            <strong id="draftCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <span>
+                Featured
+            </span>
+
+            <strong id="featuredCount">
+                0
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         Status
+    ================================================== -->
+
+    <div
+        id="adminStatus"
+        class="admin-status"
+        hidden>
+    </div>
+
+
+
+    <!-- =================================================
+         Editor
+    ================================================== -->
+
+    <section class="admin-news-editor">
+
+
+        <div class="admin-section-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    ARTICLE
+                </p>
+
+                <h2 id="editorTitle">
+                    Create News Article
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <form id="newsForm">
+
+
+            <input
+                type="hidden"
+                id="articleId"
+                value="">
+
+
+
+            <!-- Title -->
+
+            <div class="form-group">
+
+                <label for="newsTitle">
+                    Title
+                </label>
+
+                <input
+                    type="text"
+                    id="newsTitle"
+                    name="title"
+                    placeholder="Article title"
+                    required>
+
+            </div>
+
+
+
+            <!-- Summary -->
+
+            <div class="form-group">
+
+                <label for="newsSummary">
+                    Summary
+                </label>
+
+                <input
+                    type="text"
+                    id="newsSummary"
+                    name="summary"
+                    placeholder="Short description shown on the news card">
+
+            </div>
+
+
+
+            <!-- Content -->
+
+            <div class="form-group">
+
+                <label for="newsContent">
+                    Article Content
+                </label>
+
+                <textarea
+                    id="newsContent"
+                    name="content"
+                    rows="10"
+                    placeholder="Write the full article here..."
+                    required></textarea>
+
+            </div>
+
+
+
+            <!-- Author -->
+
+            <div class="form-group">
+
+                <label for="newsAuthor">
+                    Author
+                </label>
+
+                <input
+                    type="text"
+                    id="newsAuthor"
+                    name="author"
+                    value="Finley"
+                    placeholder="Author name">
+
+            </div>
+
+
+
+          <div class="admin-form-group">
+
+    <label for="newsImage">
+        Article Image
+    </label>
+
+    <input
+        type="file"
+        id="newsImage"
+        accept="image/jpeg,image/png,image/webp">
+
+    <p class="admin-form-help">
+        Upload an image to appear with this news article.
+        Maximum size: 10 MB.
+    </p>
+
+
+    <div
+        id="newsImagePreview"
+        class="news-image-preview"
+        hidden>
+
+        <img
+            id="newsImagePreviewImg"
+            src=""
+            alt="Article image preview">
+
+        <button
+            type="button"
+            id="removeNewsImage"
+            class="button button-secondary">
+
+            Remove Image
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+            <!-- Options -->
+
+            <div class="admin-news-options">
+
+
+                <label class="checkbox-option">
+
+                    <input
+                        type="checkbox"
+                        id="newsPublished"
+                        checked>
+
+                    <span>
+                        Published
+                    </span>
+
+                </label>
+
+
+                <label class="checkbox-option">
+
+                    <input
+                        type="checkbox"
+                        id="newsFeatured">
+
+                    <span>
+                        Featured
+                    </span>
+
+                </label>
+
+
+            </div>
+
+
+
+            <!-- Buttons -->
+
+            <div class="admin-news-form-actions">
+
+                <button
+                    type="submit"
+                    class="button">
+
+                    Save Article
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="cancelEdit"
+                    class="button button-secondary"
+                    hidden>
+
+                    Cancel Edit
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         Existing Articles
+    ================================================== -->
+
+    <section class="admin-news-list-section">
+
+
+        <div class="admin-section-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    MANAGE
+                </p>
+
+                <h2>
+                    Existing Articles
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="refreshNews"
+                class="button button-secondary">
+
+                ↻ Refresh
+
+            </button>
+
+        </div>
+
+
+
+        <section
+            id="newsList"
+            class="admin-news-list">
+
+        </section>
+
+
+
+        <section
+            id="emptyNews"
+            class="admin-empty-state"
+            hidden>
+
+            <div class="admin-empty-icon">
+                📰
+            </div>
+
+            <h2>
+                No Articles
+            </h2>
+
+            <p>
+                There are currently no news articles.
+            </p>
+
+        </section>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     Footer
+===================================================== -->
+
+<footer>
+
+    <div class="container-small">
+
+        <h3>
+            Pi Master
+        </h3>
+
+        <p>
+            News Administration
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 Pi Master
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JavaScript
+===================================================== -->
+
+<script src="/js/admin-news.js"></script>
+
+
+</body>
+
+</html>

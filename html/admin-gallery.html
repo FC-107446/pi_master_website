@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery Management • Pi Master</title>
+
+
+    <!-- Shared CSS -->
+
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/cards.css">
+    <link rel="stylesheet" href="/css/buttons.css">
+
+    <!-- Admin Gallery CSS -->
+
+    <link rel="stylesheet" href="/css/admin-gallery.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     Navigation
+===================================================== -->
+
+<nav>
+
+    <div class="nav-container">
+
+
+        <a
+            href="/"
+            class="logo">
+
+            <img
+                src="/images/logo.png"
+                alt="Pi Master Logo">
+
+            <span>
+                Pi Master
+            </span>
+
+        </a>
+
+
+
+        <div class="nav-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/status.html">
+                Status
+            </a>
+
+            <a href="/news.html">
+                News
+            </a>
+
+            <a href="/gallery.html">
+                Gallery
+            </a>
+
+            <a href="/community.html">
+                Community
+            </a>
+
+            <a href="/rules.html">
+                Rules
+            </a>
+
+        </div>
+
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     Main
+===================================================== -->
+
+<main class="container admin-gallery-page">
+
+
+    <!-- =================================================
+         Header
+    ================================================== -->
+
+    <section class="page-header">
+
+        <p class="eyebrow">
+            ADMINISTRATION
+        </p>
+
+
+        <h1>
+            Gallery Management
+        </h1>
+
+
+        <p>
+            Review and manage community screenshots
+            submitted to the Pi Master gallery.
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================================
+         Statistics
+    ================================================== -->
+
+    <section class="admin-gallery-stats">
+
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-label">
+                Pending
+            </span>
+
+            <strong
+                id="pendingCount"
+                class="admin-stat-value">
+
+                0
+
+            </strong>
+
+        </div>
+
+
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-label">
+                Approved
+            </span>
+
+            <strong
+                id="approvedCount"
+                class="admin-stat-value">
+
+                0
+
+            </strong>
+
+        </div>
+
+
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-label">
+                Featured
+            </span>
+
+            <strong
+                id="featuredCount"
+                class="admin-stat-value">
+
+                0
+
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         Controls
+    ================================================== -->
+
+    <section class="admin-gallery-controls">
+
+
+        <div class="admin-filter-buttons">
+
+
+            <button
+                type="button"
+                class="button filter-button active"
+                data-filter="pending">
+
+                Pending
+
+            </button>
+
+
+            <button
+                type="button"
+                class="button filter-button"
+                data-filter="approved">
+
+                Approved
+
+            </button>
+
+
+            <button
+                type="button"
+                class="button filter-button"
+                data-filter="all">
+
+                All
+
+            </button>
+
+
+        </div>
+
+
+        <button
+            type="button"
+            id="refreshGallery"
+            class="button button-secondary">
+
+            ↻ Refresh
+
+        </button>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         Status
+    ================================================== -->
+
+    <div
+        id="adminStatus"
+        class="admin-status"
+        hidden>
+    </div>
+
+
+
+    <!-- =================================================
+         Gallery
+    ================================================== -->
+
+    <section
+        id="adminGallery"
+        class="admin-gallery-grid">
+
+        <!-- JavaScript inserts gallery items here -->
+
+    </section>
+
+
+
+    <!-- =================================================
+         Empty State
+    ================================================== -->
+
+    <section
+        id="emptyGallery"
+        class="admin-empty-state"
+        hidden>
+
+        <div class="admin-empty-icon">
+            📷
+        </div>
+
+
+        <h2>
+            Nothing here
+        </h2>
+
+
+        <p>
+            There are no screenshots matching this filter.
+        </p>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     Footer
+===================================================== -->
+
+<footer>
+
+    <div class="container-small">
+
+        <h3>
+            Pi Master
+        </h3>
+
+
+        <p>
+            Gallery Administration
+        </p>
+
+
+        <br>
+
+
+        <p>
+            © 2026 Pi Master
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JavaScript
+===================================================== -->
+
+<script src="/js/admin-gallery.js"></script>
+
+
+</body>
+
+</html>

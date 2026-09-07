@@ -1,0 +1,713 @@
+/* =========================================================
+Pi Master - Rules
+Complete redesigned layout
+========================================================= */
+
+/* =========================================================
+Page
+========================================================= */
+
+.rules-page {
+padding-bottom: 5rem;
+}
+
+.rules-page-header {
+position: relative;
+margin-bottom: 3rem;
+padding: 2.5rem 2.75rem;
+
+```
+border-radius: 20px;
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(46, 125, 50, 0.18),
+        rgba(46, 125, 50, 0.04)
+    );
+
+border: 1px solid rgba(76, 175, 80, 0.35);
+
+overflow: hidden;
+```
+
+}
+
+.rules-page-header::after {
+content: "";
+
+```
+position: absolute;
+
+width: 220px;
+height: 220px;
+
+right: -80px;
+top: -100px;
+
+border-radius: 50%;
+
+background:
+    rgba(76, 175, 80, 0.12);
+```
+
+}
+
+.rules-page-header h1 {
+position: relative;
+z-index: 1;
+
+```
+margin: 0 0 0.75rem 0;
+
+font-size: clamp(
+    2.2rem,
+    5vw,
+    3.5rem
+);
+```
+
+}
+
+.rules-page-header p {
+position: relative;
+z-index: 1;
+
+```
+max-width: 700px;
+
+line-height: 1.7;
+```
+
+}
+
+/* =========================================================
+Section Layout
+========================================================= */
+
+.rules-section {
+margin-bottom: 3rem;
+}
+
+.rules-section:last-child {
+margin-bottom: 0;
+}
+
+.rules-card {
+position: relative;
+
+```
+background:
+    var(--card-background);
+
+border:
+    1px solid var(--border-color);
+
+border-radius: 18px;
+
+padding: 2rem;
+
+box-shadow:
+    var(--card-shadow);
+
+overflow: hidden;
+```
+
+}
+
+.rules-card::before {
+content: "";
+
+```
+position: absolute;
+
+left: 0;
+top: 0;
+bottom: 0;
+
+width: 4px;
+
+background:
+    #4caf50;
+```
+
+}
+
+/* =========================================================
+Section Headings
+========================================================= */
+
+.rules-card h2 {
+margin: 0 0 1.75rem 0;
+
+```
+font-size: 1.8rem;
+
+display: flex;
+align-items: center;
+
+gap: 0.7rem;
+```
+
+}
+
+.rules-card h2::before {
+content: "";
+
+```
+width: 10px;
+height: 10px;
+
+border-radius: 50%;
+
+background: #4caf50;
+
+box-shadow:
+    0 0 12px rgba(76, 175, 80, 0.6);
+```
+
+}
+
+.rules-card h3 {
+margin: 2rem 0 0.8rem 0;
+
+```
+font-size: 1.25rem;
+```
+
+}
+
+/* =========================================================
+Server Rules
+========================================================= */
+
+.rules-list {
+list-style: none;
+
+```
+margin: 0;
+padding: 0;
+
+counter-reset: server-rule;
+```
+
+}
+
+.rules-list > li {
+counter-increment: server-rule;
+
+```
+position: relative;
+
+display: grid;
+
+grid-template-columns:
+    42px
+    1fr;
+
+gap: 1rem;
+
+margin-bottom: 0.75rem;
+
+padding: 1rem 1.1rem;
+
+border-radius: 12px;
+
+background:
+    var(--background-secondary);
+
+border:
+    1px solid var(--border-color);
+
+line-height: 1.6;
+
+transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+```
+
+}
+
+.rules-list > li::before {
+content:
+counter(server-rule);
+
+```
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+width: 32px;
+height: 32px;
+
+border-radius: 9px;
+
+background:
+    rgba(76, 175, 80, 0.15);
+
+color:
+    #4caf50;
+
+font-weight: 700;
+```
+
+}
+
+.rules-list > li:hover {
+transform:
+translateX(4px);
+
+```
+border-color:
+    rgba(76, 175, 80, 0.45);
+
+background:
+    rgba(76, 175, 80, 0.05);
+```
+
+}
+
+.rules-list > li:last-child {
+margin-bottom: 0;
+}
+
+/* =========================================================
+Rule 6.1
+========================================================= */
+
+.rules-sublist {
+list-style: none;
+
+```
+margin: 0.85rem 0 0 0;
+padding: 0;
+```
+
+}
+
+.rules-sublist li {
+position: relative;
+
+```
+padding:
+    0.7rem 0.9rem 0.7rem 2.5rem;
+
+border-left:
+    2px solid rgba(76, 175, 80, 0.4);
+
+color:
+    var(--text-secondary);
+
+line-height: 1.6;
+```
+
+}
+
+.rules-sublist li::before {
+content: "6.1";
+
+```
+position: absolute;
+
+left: 0.6rem;
+
+color:
+    #4caf50;
+
+font-weight: 700;
+```
+
+}
+
+/* =========================================================
+Redstone Introduction
+========================================================= */
+
+.rules-card > p {
+line-height: 1.75;
+
+```
+color:
+    var(--text-secondary);
+```
+
+}
+
+.rules-card > p strong {
+color:
+var(--text-primary);
+}
+
+/* =========================================================
+Redstone Values
+========================================================= */
+
+.redstone-values {
+display: grid;
+
+```
+grid-template-columns:
+    repeat(
+        2,
+        minmax(0, 1fr)
+    );
+
+gap: 0.75rem;
+
+margin: 1.25rem 0 0 0;
+
+padding: 0;
+
+list-style: none;
+```
+
+}
+
+.redstone-values li {
+position: relative;
+
+```
+padding:
+    1rem 1.1rem 1rem 3rem;
+
+border-radius: 12px;
+
+background:
+    var(--background-secondary);
+
+border:
+    1px solid var(--border-color);
+
+line-height: 1.55;
+```
+
+}
+
+.redstone-values li::before {
+content: "◆";
+
+```
+position: absolute;
+
+left: 1.1rem;
+top: 50%;
+
+transform:
+    translateY(-50%);
+
+color:
+    #4caf50;
+
+font-size: 0.75rem;
+```
+
+}
+
+.redstone-values strong {
+color:
+#4caf50;
+}
+
+/* =========================================================
+Example Box
+========================================================= */
+
+.redstone-example {
+margin-top: 2rem;
+
+```
+padding: 1.5rem;
+
+border-radius: 15px;
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(76, 175, 80, 0.08),
+        rgba(76, 175, 80, 0.02)
+    );
+
+border:
+    1px solid rgba(76, 175, 80, 0.25);
+```
+
+}
+
+.redstone-example h3 {
+margin-top: 0;
+
+```
+color:
+    #4caf50;
+```
+
+}
+
+.redstone-example p {
+margin-bottom: 0.8rem;
+}
+
+.redstone-example ul {
+margin: 0.75rem 0 1.25rem 0;
+
+```
+padding-left: 1.5rem;
+```
+
+}
+
+.redstone-example li {
+margin-bottom: 0.4rem;
+
+```
+line-height: 1.6;
+```
+
+}
+
+/* =========================================================
+Calculation
+========================================================= */
+
+.redstone-calculation {
+margin: 1.25rem 0;
+
+```
+padding: 1.25rem 1.5rem;
+
+border-radius: 12px;
+
+background:
+    #111;
+
+border:
+    1px solid rgba(76, 175, 80, 0.35);
+
+color:
+    #7ee787;
+
+font-family:
+    "Courier New",
+    Courier,
+    monospace;
+
+font-size: 1.05rem;
+
+font-weight: 700;
+
+overflow-x: auto;
+
+box-shadow:
+    inset 0 0 20px rgba(0, 0, 0, 0.25);
+```
+
+}
+
+/* =========================================================
+Approval Panel
+========================================================= */
+
+.rules-warning {
+position: relative;
+
+```
+margin-top: 2rem;
+
+padding: 1.5rem 1.5rem 1.5rem 4.5rem;
+
+border-radius: 15px;
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(76, 175, 80, 0.16),
+        rgba(76, 175, 80, 0.05)
+    );
+
+border:
+    1px solid rgba(76, 175, 80, 0.4);
+```
+
+}
+
+.rules-warning::before {
+content: "✓";
+
+```
+position: absolute;
+
+left: 1.5rem;
+top: 1.5rem;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+width: 42px;
+height: 42px;
+
+border-radius: 12px;
+
+background:
+    #4caf50;
+
+color:
+    white;
+
+font-size: 1.3rem;
+
+font-weight: 800;
+```
+
+}
+
+.rules-warning h3 {
+margin: 0 0 0.5rem 0;
+
+```
+color:
+    #4caf50;
+```
+
+}
+
+.rules-warning p {
+margin: 0;
+
+```
+line-height: 1.65;
+
+color:
+    var(--text-secondary);
+```
+
+}
+
+.rules-warning strong {
+color:
+#4caf50;
+}
+
+/* =========================================================
+Small Green Divider
+========================================================= */
+
+.rules-section + .rules-section {
+position: relative;
+}
+
+.rules-section + .rules-section::before {
+content: "";
+
+```
+display: block;
+
+width: 70px;
+height: 3px;
+
+margin:
+    0 auto 3rem auto;
+
+border-radius: 99px;
+
+background:
+    #4caf50;
+```
+
+}
+
+/* =========================================================
+Mobile
+========================================================= */
+
+@media (max-width: 700px) {
+
+```
+.rules-page-header {
+    padding:
+        1.75rem 1.4rem;
+
+    border-radius: 15px;
+
+    margin-bottom: 2rem;
+}
+
+
+.rules-page-header h1 {
+    font-size: 2.2rem;
+}
+
+
+.rules-card {
+    padding: 1.25rem;
+
+    border-radius: 14px;
+}
+
+
+.rules-card h2 {
+    font-size: 1.45rem;
+
+    margin-bottom: 1.25rem;
+}
+
+
+.rules-list > li {
+    grid-template-columns:
+        34px
+        1fr;
+
+    gap: 0.75rem;
+
+    padding:
+        0.85rem;
+}
+
+
+.rules-list > li::before {
+    width: 28px;
+    height: 28px;
+
+    border-radius: 7px;
+
+    font-size: 0.9rem;
+}
+
+
+.redstone-values {
+    grid-template-columns:
+        1fr;
+}
+
+
+.redstone-example {
+    padding: 1.1rem;
+}
+
+
+.redstone-calculation {
+    padding: 1rem;
+
+    font-size: 0.9rem;
+}
+
+
+.rules-warning {
+    padding:
+        1.25rem 1.25rem 1.25rem 4rem;
+}
+
+
+.rules-warning::before {
+    left: 1rem;
+    top: 1.25rem;
+
+    width: 36px;
+    height: 36px;
+}
+```
+
+}

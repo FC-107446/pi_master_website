@@ -1,0 +1,130 @@
+/* ======================================================
+   Pi Master Website
+   variables.css
+
+   Global Design System
+====================================================== */
+
+:root{
+
+    /* ===============================
+       Brand Colours
+    =============================== */
+
+    --primary:#4CAF50;
+    --primary-light:#67d96f;
+    --primary-dark:#2f8d3b;
+
+    --accent:#8ee28b;
+
+    --background:#11161b;
+    --surface:#1b2328;
+    --surface-light:#232d34;
+    --surface-hover:#2d3942;
+
+    --border:#36434c;
+
+    --text:#f2f4f5;
+    --text-light:#c8d0d4;
+    --text-muted:#8e989f;
+
+    --success:#39c96b;
+    --warning:#f4b942;
+    --danger:#e45858;
+
+
+
+    /* ===============================
+       Fonts
+    =============================== */
+
+    --font:
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+
+
+    /* ===============================
+       Border Radius
+    =============================== */
+
+    --radius-xs:6px;
+    --radius-sm:10px;
+    --radius-md:16px;
+    --radius-lg:22px;
+    --radius-xl:30px;
+
+
+
+    /* ===============================
+       Shadows
+    =============================== */
+
+    --shadow-sm:
+        0 2px 8px rgba(0,0,0,.20);
+
+    --shadow-md:
+        0 8px 20px rgba(0,0,0,.28);
+
+    --shadow-lg:
+        0 16px 42px rgba(0,0,0,.38);
+
+
+
+    /* ===============================
+       Layout
+    =============================== */
+
+    --page-width:1450px;
+
+    --section-gap:80px;
+
+    --card-gap:28px;
+
+
+
+    /* ===============================
+       Navigation
+    =============================== */
+
+    --nav-height:78px;
+
+
+
+    /* ===============================
+       Animation
+    =============================== */
+
+    --transition-fast:.18s;
+
+    --transition:.28s;
+
+    --transition-slow:.45s;
+
+
+
+    /* ===============================
+       Z Index
+    =============================== */
+
+    --z-nav:1000;
+
+    --z-modal:5000;
+
+    --z-popup:8000;
+
+}
+
+
+
+/* ======================================================
+   Dark Theme Defaults
+====================================================== */
+
+html{
+
+    color-scheme:dark;
+
+}

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>BBC News Administration • Pi Master</title>
+
+
+    <!-- Shared CSS -->
+
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/cards.css">
+    <link rel="stylesheet" href="/css/buttons.css">
+
+    <!-- BBC Admin CSS -->
+
+    <link rel="stylesheet" href="/css/bbc-admin.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     Navigation
+===================================================== -->
+
+<nav>
+
+    <div class="nav-container">
+
+
+        <a
+            href="/"
+            class="logo">
+
+            <img
+                src="/images/logo.png"
+                alt="Pi Master Logo">
+
+            <span>
+                Pi Master
+            </span>
+
+        </a>
+
+
+
+        <div class="nav-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/status.html">
+                Status
+            </a>
+
+            <a href="/news.html">
+                News
+            </a>
+
+            <a href="/gallery.html">
+                Gallery
+            </a>
+
+            <a href="/community.html">
+                Community
+            </a>
+
+            <a href="/rules.html">
+                Rules
+            </a>
+
+        </div>
+
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     Main
+===================================================== -->
+
+<main class="container bbc-admin-page">
+
+
+    <!-- =================================================
+         Header
+    ================================================== -->
+
+    <section class="bbc-header">
+
+        <div class="bbc-logo">
+            BBC
+        </div>
+
+
+        <div>
+
+            <p class="bbc-eyebrow">
+                BANANA BROADCASTING COMPANY
+            </p>
+
+
+            <h1>
+                BBC News Administration
+            </h1>
+
+
+            <p>
+                Create and manage news articles for the Banana Broadcasting Company.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         Status
+    ================================================== -->
+
+    <div
+        id="adminStatus"
+        class="bbc-status"
+        hidden>
+    </div>
+
+
+
+    <!-- =================================================
+         Editor
+    ================================================== -->
+
+    <section class="bbc-editor-card">
+
+
+        <div class="bbc-section-heading">
+
+            <div>
+
+                <p class="bbc-eyebrow">
+                    PUBLISHING
+                </p>
+
+                <h2 id="editorTitle">
+                    Create News Article
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <form id="newsForm">
+
+
+            <!-- Title -->
+
+            <div class="bbc-form-group">
+
+                <label for="title">
+                    Headline
+                </label>
+
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    placeholder="Enter the news headline"
+                    maxlength="200"
+                    required>
+
+            </div>
+
+
+
+            <!-- Summary -->
+
+            <div class="bbc-form-group">
+
+                <label for="summary">
+                    Summary
+                </label>
+
+                <textarea
+                    id="summary"
+                    name="summary"
+                    rows="3"
+                    maxlength="500"
+                    placeholder="A short description of the article..."></textarea>
+
+            </div>
+
+
+
+            <!-- Content -->
+
+            <div class="bbc-form-group">
+
+                <label for="content">
+                    Article
+                </label>
+
+                <textarea
+                    id="content"
+                    name="content"
+                    rows="12"
+                    placeholder="Write the full news article here..."
+                    required></textarea>
+
+            </div>
+
+
+
+            <!-- Author -->
+
+            <div class="bbc-form-group">
+
+                <label>
+                    News by
+                </label>
+
+
+                <div class="bbc-author-lock">
+
+                    <span class="bbc-author-icon">
+                        🍌
+                    </span>
+
+                    <strong>
+                        BBC
+                    </strong>
+
+                    <span>
+                        Banana Broadcasting Company
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Image -->
+
+            <div class="bbc-form-group">
+
+                <label for="imageFile">
+                    Article Photo
+                </label>
+
+
+                <div class="bbc-upload-area">
+
+                    <input
+                        type="file"
+                        id="imageFile"
+                        name="imageFile"
+                        accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp">
+
+
+                    <p>
+                        JPG, PNG or WebP • Maximum 10 MB
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    id="imagePreview"
+                    class="bbc-image-preview"
+                    hidden>
+
+                    <img
+                        id="previewImage"
+                        src=""
+                        alt="Article image preview">
+
+
+                    <button
+                        type="button"
+                        id="removeImage"
+                        class="button button-danger">
+
+                        Remove Image
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Existing image -->
+
+            <input
+                type="hidden"
+                id="existingImage"
+                value="">
+
+
+
+            <!-- Options -->
+
+            <div class="bbc-options">
+
+
+                <label class="bbc-checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="published"
+                        checked>
+
+                    <span>
+                        Publish article
+                    </span>
+
+                </label>
+
+
+
+                <label class="bbc-checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="featured">
+
+                    <span>
+                        Featured article
+                    </span>
+
+                </label>
+
+
+            </div>
+
+
+
+            <!-- Buttons -->
+
+            <div class="bbc-form-actions">
+
+                <button
+                    type="submit"
+                    id="saveButton"
+                    class="button bbc-primary-button">
+
+                    Publish Article
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="cancelEdit"
+                    class="button button-secondary"
+                    hidden>
+
+                    Cancel Edit
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         Articles
+    ================================================== -->
+
+    <section class="bbc-articles-section">
+
+
+        <div class="bbc-section-heading">
+
+            <div>
+
+                <p class="bbc-eyebrow">
+                    BBC ARCHIVE
+                </p>
+
+                <h2>
+                    Your Articles
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="refreshArticles"
+                class="button button-secondary">
+
+                ↻ Refresh
+
+            </button>
+
+        </div>
+
+
+
+        <div
+            id="articlesGrid"
+            class="bbc-articles-grid">
+        </div>
+
+
+
+        <section
+            id="emptyArticles"
+            class="bbc-empty-state"
+            hidden>
+
+            <div>
+                📰
+            </div>
+
+            <h3>
+                No BBC articles yet
+            </h3>
+
+            <p>
+                Create your first article above to start publishing BBC news.
+            </p>
+
+        </section>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     Footer
+===================================================== -->
+
+<footer>
+
+    <div class="container-small">
+
+        <h3>
+            Pi Master
+        </h3>
+
+        <p>
+            Banana Broadcasting Company
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 Pi Master
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JavaScript
+===================================================== -->
+
+<script src="/js/bbc-admin.js"></script>
+
+
+</body>
+
+</html>

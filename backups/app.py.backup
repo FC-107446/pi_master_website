@@ -1,0 +1,154 @@
+from flask import Flask, jsonify
+from flask_cors import CORS
+
+from mcstatus import BedrockServer
+
+import psutil
+import os
+import time
+
+
+
+app = Flask(__name__)
+
+CORS(app)
+
+
+
+MC_HOST = os.getenv(
+    "MINECRAFT_HOST",
+    "pimaster.coeus1.tech"
+)
+
+
+MC_PORT = int(
+    os.getenv(
+        "MINECRAFT_PORT",
+        19132
+    )
+)
+
+
+
+START_TIME = time.time()
+
+
+
+
+
+@app.route("/api/status")
+def status():
+
+
+    data = {
+
+        "online": False,
+
+        "players": 0,
+
+        "max_players": 0,
+
+        "version": "Unknown",
+
+        "ping": 0,
+
+        "cpu": psutil.cpu_percent(),
+
+        "ram": psutil.virtual_memory().percent,
+
+        "disk": psutil.disk_usage("/").percent,
+
+        "uptime": get_uptime(),
+
+        "player_list": []
+
+    }
+
+
+
+
+    try:
+
+
+        server = BedrockServer(
+            MC_HOST,
+            MC_PORT
+        )
+
+
+        result = server.status()
+
+
+        data["online"] = True
+
+        data["players"] = result.players.online
+
+        data["max_players"] = result.players.max
+
+        data["version"] = result.version.name
+
+        data["ping"] = round(
+            result.latency
+        )
+
+
+
+    except Exception as e:
+
+        print(
+            "Minecraft error:",
+            e
+        )
+
+
+
+    return jsonify(data)
+
+
+
+
+
+
+def get_uptime():
+
+    seconds = int(
+        time.time() - START_TIME
+    )
+
+
+    days = seconds // 86400
+
+    hours = (
+        seconds % 86400
+    ) // 3600
+
+
+    minutes = (
+        seconds % 3600
+    ) // 60
+
+
+    return (
+        f"{days}d "
+        f"{hours}h "
+        f"{minutes}m"
+    )
+
+
+
+
+
+
+@app.route("/")
+def home():
+
+    return "Pi Master API Online"
+
+
+
+
+
+app.run(
+    host="0.0.0.0",
+    port=5000
+)

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Gallery | Pi Master</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css?v=3"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/navigation.css?v=3"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/gallery.css?v=3"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     Navigation
+========================================================= -->
+
+<nav>
+
+    <div class="nav-container">
+
+
+        <a
+            href="/index.html"
+            class="logo"
+        >
+
+            <img
+                src="/images/logo.png"
+                alt="Pi Master logo"
+            >
+
+            <span>
+                Pi Master
+            </span>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="/index.html">
+                Home
+            </a>
+
+            <a href="/status.html">
+                Server Status
+            </a>
+
+            <a href="/news.html">
+                News
+            </a>
+
+            <a
+                href="/gallery.html"
+                class="active"
+            >
+                Gallery
+            </a>
+
+            <a href="/community.html">
+                Community
+            </a>
+
+            <a href="/rules.html">
+                Rules
+            </a>
+
+        </div>
+
+
+        <!-- Mobile Menu Button -->
+
+        <button
+            class="mobile-menu"
+            id="mobileMenu"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+
+    </div>
+
+
+    <!-- Mobile Navigation -->
+
+    <div
+        class="mobile-nav"
+        id="mobileNav"
+    >
+
+        <a href="/index.html">
+            Home
+        </a>
+
+        <a href="/status.html">
+            Server Status
+        </a>
+
+        <a href="/news.html">
+            News
+        </a>
+
+        <a
+            href="/gallery.html"
+            class="active"
+        >
+            Gallery
+        </a>
+
+        <a href="/community.html">
+            Community
+        </a>
+
+        <a href="/rules.html">
+            Rules
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================================================
+     Main
+========================================================= -->
+
+<main class="gallery-page">
+
+
+    <!-- Header -->
+
+    <section class="gallery-header">
+
+        <div>
+
+            <p class="gallery-eyebrow">
+                Pi Master Community
+            </p>
+
+            <h1>
+                Screenshot Gallery
+            </h1>
+
+            <p class="gallery-description">
+                Check out screenshots and moments
+                shared by the Pi Master community.
+            </p>
+
+        </div>
+
+
+        <a
+            href="/upload.html"
+            class="gallery-upload-button"
+        >
+            + Upload a Screenshot
+        </a>
+
+    </section>
+
+
+
+    <!-- Gallery -->
+
+    <section class="gallery-section">
+
+        <div
+            id="galleryGrid"
+            class="gallery-grid"
+        >
+
+            <div class="gallery-loading">
+
+                <div class="gallery-loading-icon">
+                    🖼️
+                </div>
+
+                <p>
+                    Loading gallery...
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Empty state -->
+
+        <div
+            id="galleryEmpty"
+            class="gallery-empty"
+            hidden
+        >
+
+            <div class="gallery-empty-icon">
+                🖼️
+            </div>
+
+            <h3>
+                No screenshots yet
+            </h3>
+
+            <p>
+                Be the first person to share
+                a screenshot with the community.
+            </p>
+
+            <a
+                href="/upload.html"
+                class="gallery-upload-button"
+            >
+                Upload a Screenshot
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<script src="/js/gallery.js"></script>
+
+
+</body>
+
+</html>

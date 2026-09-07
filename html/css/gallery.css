@@ -1,0 +1,813 @@
+/* =========================================================
+   Pi Master - Gallery 
+With lightbox
+========================================================= */
+
+
+/* =========================================================
+   Page
+========================================================= */
+
+.gallery-page {
+    width: min(1400px, 94%);
+    margin: 0 auto;
+    padding: 70px 0 100px;
+}
+
+
+/* =========================================================
+   Header
+========================================================= */
+
+.gallery-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.gallery-eyebrow {
+    margin: 0 0 8px;
+    color: var(--primary);
+    font-size: .85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+}
+
+.gallery-header h1 {
+    margin: 0;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.05;
+}
+
+.gallery-description {
+    max-width: 650px;
+    margin: 18px 0 0;
+    color: var(--text-light);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   Upload Button
+========================================================= */
+
+.gallery-upload-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    flex-shrink: 0;
+
+    padding: 13px 20px;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+    color: white;
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+.gallery-upload-button:hover {
+    color: white;
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, .25);
+}
+
+
+/* =========================================================
+   Gallery Grid
+========================================================= */
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   Gallery Card
+========================================================= */
+
+.gallery-item {
+    position: relative;
+
+    overflow: hidden;
+
+    aspect-ratio: 16 / 10;
+
+    border-radius: 18px;
+
+    background: var(--surface);
+
+    border:
+        1px solid
+        var(--border);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, .18);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, .3);
+}
+
+
+/* =========================================================
+   Gallery Image
+========================================================= */
+
+.gallery-image-wrapper {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.gallery-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        transform .3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   Image Overlay
+========================================================= */
+
+.gallery-item::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, .88),
+            rgba(0, 0, 0, .35) 45%,
+            rgba(0, 0, 0, 0)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   Card Information
+========================================================= */
+
+.gallery-item-content {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 2;
+
+    padding: 22px;
+
+    color: white;
+}
+
+.gallery-item-content h3 {
+    margin: 0;
+
+    font-size: 1.2rem;
+    line-height: 1.25;
+}
+
+.gallery-item-content p {
+    display: none;
+}
+
+.gallery-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 7px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            .72
+        );
+
+    font-size: .9rem;
+}
+
+.gallery-meta span:first-child::before {
+    content: "By ";
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            .5
+        );
+}
+
+
+/* =========================================================
+   Loading
+========================================================= */
+
+.gallery-loading {
+    grid-column: 1 / -1;
+
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--text-light);
+}
+
+.gallery-loading-icon {
+    font-size: 3rem;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   Empty State
+========================================================= */
+
+.gallery-empty {
+    padding: 80px 20px;
+
+    text-align: center;
+
+    color: var(--text-light);
+}
+
+.gallery-empty-icon {
+    font-size: 4rem;
+
+    margin-bottom: 20px;
+}
+
+.gallery-empty h3 {
+    margin: 0 0 10px;
+
+    color: var(--text);
+
+    font-size: 1.5rem;
+}
+
+.gallery-empty p {
+    margin: 0 auto 25px;
+
+    max-width: 500px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   Mobile Navigation
+========================================================= */
+
+.mobile-menu {
+    border: 0;
+
+    background: transparent;
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    padding: 8px;
+
+    font-size: 2rem;
+}
+
+
+/*
+   Mobile navigation is controlled by
+   gallery.js.
+*/
+
+.mobile-nav {
+    display: none;
+
+    position: absolute;
+
+    top: var(--nav-height);
+
+    left: 0;
+    right: 0;
+
+    z-index: 999;
+
+    background:
+        rgba(
+            17,
+            22,
+            27,
+            .98
+        );
+
+    backdrop-filter: blur(14px);
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+    padding: 12px 5%;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.mobile-nav.open {
+    display: flex;
+}
+
+.mobile-nav a {
+    padding: 14px 16px;
+
+    border-radius: 10px;
+
+    color: var(--text-light);
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a.active {
+    background: var(--surface-light);
+
+    color: white;
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+body.gallery-lightbox-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   Lightbox Overlay
+========================================================= */
+
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease;
+}
+
+
+.gallery-lightbox.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   Blurred Background
+========================================================= */
+
+.gallery-lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, .78);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =========================================================
+   Lightbox Window
+========================================================= */
+
+.gallery-lightbox-content {
+    position: relative;
+
+    z-index: 2;
+
+    /*
+       The window itself always has the
+       same dimensions regardless of
+       the image being displayed.
+    */
+
+    width: min(1100px, 92vw);
+    height: min(820px, 90vh);
+
+    max-width: 1100px;
+    max-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        rgba(20, 25, 30, .98);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .12);
+
+    box-shadow:
+        0 30px 100px
+        rgba(0, 0, 0, .65);
+
+    transform: scale(.96);
+
+    transition:
+        transform .25s ease;
+}
+
+
+.gallery-lightbox.open
+.gallery-lightbox-content {
+
+    transform: scale(1);
+
+}
+
+
+/* =========================================================
+   Image Area
+========================================================= */
+
+.gallery-lightbox-image-wrap {
+
+    flex: 1;
+
+    min-height: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        #080b0e;
+
+    overflow: hidden;
+}
+
+
+/*
+   IMPORTANT:
+
+   The image cannot determine the
+   size of the lightbox window.
+*/
+
+.gallery-lightbox-image {
+
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 12px 40px
+        rgba(0, 0, 0, .45);
+
+}
+
+
+/* =========================================================
+   Lightbox Details
+========================================================= */
+
+.gallery-lightbox-details {
+
+    flex-shrink: 0;
+
+    padding:
+        20px 28px 24px;
+
+    background:
+        rgba(12, 16, 20, .98);
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, .08);
+
+}
+
+
+.gallery-lightbox-title {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 1.5rem;
+
+    line-height: 1.25;
+
+}
+
+
+.gallery-lightbox-author {
+
+    margin:
+        6px 0 0;
+
+    color:
+        var(--text-light);
+
+    font-size: .9rem;
+
+}
+
+
+.gallery-lightbox-caption {
+
+    margin:
+        12px 0 0;
+
+    color:
+        var(--text-light);
+
+    line-height: 1.6;
+
+}
+
+
+.gallery-lightbox-date {
+
+    margin-top: 8px;
+
+    color:
+        rgba(255, 255, 255, .5);
+
+    font-size: .8rem;
+
+}
+
+
+/* =========================================================
+   Close Button
+========================================================= */
+
+.gallery-lightbox-close {
+
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    z-index: 20;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 0, 0, .72);
+
+    color: white;
+
+    font-size: 1.9rem;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+
+.gallery-lightbox-close:hover {
+
+    background:
+        rgba(255, 255, 255, .18);
+
+    transform:
+        scale(1.08);
+
+}
+
+
+/* =========================================================
+   Tablet
+========================================================= */
+
+@media (max-width: 980px) {
+
+    .gallery-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   Mobile
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .gallery-page {
+
+        width: 92%;
+
+        padding:
+            45px 0 70px;
+
+    }
+
+
+    .gallery-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+    }
+
+
+    .gallery-header {
+
+        margin-bottom: 32px;
+
+    }
+
+
+    .gallery-upload-button {
+
+        width: 100%;
+
+    }
+
+
+    /* -----------------------------
+       Mobile Lightbox
+    ----------------------------- */
+
+    .gallery-lightbox {
+
+        padding: 10px;
+
+    }
+
+
+    .gallery-lightbox-content {
+
+        width: 96vw;
+
+        height: 92vh;
+
+        max-width: 96vw;
+        max-height: 92vh;
+
+        border-radius: 16px;
+
+    }
+
+
+    .gallery-lightbox-image-wrap {
+
+        padding: 15px;
+
+    }
+
+
+    .gallery-lightbox-details {
+
+        padding:
+            16px 20px 20px;
+
+    }
+
+
+    .gallery-lightbox-title {
+
+        font-size: 1.25rem;
+
+    }
+
+
+    .gallery-lightbox-close {
+
+        top: 10px;
+        right: 10px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 1.7rem;
+
+    }
+
+}

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Upload Screenshot • Pi Master</title>
+
+
+    <!-- Shared CSS -->
+
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/cards.css">
+    <link rel="stylesheet" href="/css/buttons.css">
+
+    <!-- Upload CSS -->
+
+    <link rel="stylesheet" href="/css/upload.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ===========================
+     Navigation
+============================ -->
+
+<nav>
+
+    <div class="nav-container">
+
+
+        <a
+            href="/"
+            class="logo">
+
+            <img
+                src="/images/logo.png"
+                alt="Pi Master Logo">
+
+            <span>
+                Pi Master
+            </span>
+
+        </a>
+
+
+
+        <div class="nav-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/status.html">
+                Status
+            </a>
+
+            <a href="/news.html">
+                News
+            </a>
+
+            <a href="/gallery.html">
+                Gallery
+            </a>
+
+            <a href="/community.html">
+                Community
+            </a>
+
+            <a href="/rules.html">
+                Rules
+            </a>
+
+        </div>
+
+
+    </div>
+
+</nav>
+
+
+
+<!-- ===========================
+     Main
+============================ -->
+
+<main class="container-small upload-page">
+
+
+    <!-- ===========================
+         Header
+    ============================ -->
+
+    <section class="page-header upload-header">
+
+        <p class="eyebrow">
+            COMMUNITY GALLERY
+        </p>
+
+
+        <h1>
+            Upload a Screenshot
+        </h1>
+
+
+        <p>
+            Share a build, adventure or memorable moment
+            from the Pi Master server.
+        </p>
+
+    </section>
+
+
+
+
+    <!-- ===========================
+         Upload Card
+    ============================ -->
+
+    <section class="upload-card">
+
+
+        <form
+            id="uploadForm"
+            enctype="multipart/form-data">
+
+
+            <!-- ===========================
+                 Player Name
+            ============================ -->
+
+            <div class="form-group">
+
+                <label for="uploadedBy">
+                    Your Name
+                </label>
+
+
+                <input
+                    type="text"
+                    id="uploadedBy"
+                    name="uploaded_by"
+                    placeholder="Minecraft username"
+                    maxlength="50"
+                    required>
+
+
+                <p class="form-help">
+                    This will be displayed alongside your screenshot.
+                </p>
+
+            </div>
+
+
+
+            <!-- ===========================
+                 Title
+            ============================ -->
+
+            <div class="form-group">
+
+                <label for="title">
+                    Screenshot Title
+                </label>
+
+
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    placeholder="e.g. My new castle"
+                    maxlength="100"
+                    required>
+
+            </div>
+
+
+
+            <!-- ===========================
+                 Caption
+            ============================ -->
+
+            <div class="form-group">
+
+                <label for="caption">
+                    Caption
+                    <span class="optional">
+                        Optional
+                    </span>
+                </label>
+
+
+                <textarea
+                    id="caption"
+                    name="caption"
+                    rows="4"
+                    maxlength="500"
+                    placeholder="Tell everyone about this screenshot..."></textarea>
+
+            </div>
+
+
+
+            <!-- ===========================
+                 Image
+            ============================ -->
+
+            <div class="form-group">
+
+                <label for="image">
+                    Screenshot
+                </label>
+
+
+                <div
+                    id="dropZone"
+                    class="upload-drop-zone">
+
+
+                    <div class="upload-drop-icon">
+                        📸
+                    </div>
+
+
+                    <h3>
+                        Choose an image
+                    </h3>
+
+
+                    <p>
+                        Click here to select a screenshot from your computer.
+                    </p>
+
+
+                    <p class="upload-file-types">
+                        JPG, JPEG, PNG or WebP • Maximum 10 MB
+                    </p>
+
+
+                    <input
+                        type="file"
+                        id="image"
+                        name="image"
+                        accept="image/jpeg,image/png,image/webp"
+                        required>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ===========================
+                 Preview
+            ============================ -->
+
+            <div
+                id="previewContainer"
+                class="upload-preview"
+                hidden>
+
+
+                <p class="preview-label">
+                    Preview
+                </p>
+
+
+                <img
+                    id="imagePreview"
+                    src=""
+                    alt="Screenshot preview">
+
+
+                <button
+                    type="button"
+                    id="removeImage"
+                    class="button button-secondary">
+
+                    Remove Image
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- ===========================
+                 Notice
+            ============================ -->
+
+            <div class="upload-notice">
+
+                <strong>
+                    Before you upload
+                </strong>
+
+
+                <p>
+                    Your screenshot will be reviewed before appearing
+                    in the public gallery. You cannot delete other
+                    players' uploads.
+                </p>
+
+            </div>
+
+
+
+            <!-- ===========================
+                 Status
+            ============================ -->
+
+            <div
+                id="uploadStatus"
+                class="upload-status"
+                hidden>
+            </div>
+
+
+
+            <!-- ===========================
+                 Submit
+            ============================ -->
+
+            <button
+                type="submit"
+                id="uploadButton"
+                class="button upload-submit">
+
+                Upload Screenshot
+
+            </button>
+
+
+        </form>
+
+
+    </section>
+
+
+
+
+    <!-- ===========================
+         Back to Gallery
+    ============================ -->
+
+    <div class="back-to-gallery">
+
+        <a href="/gallery.html">
+            ← Back to Gallery
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ===========================
+     Footer
+============================ -->
+
+<footer>
+
+    <div class="container-small">
+
+        <h3>
+            Pi Master
+        </h3>
+
+
+        <p>
+            Enterprise Minecraft Bedrock Server
+        </p>
+
+
+        <br>
+
+
+        <p>
+            © 2026 Pi Master
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ===========================
+     JavaScript
+============================ -->
+
+<script src="/js/upload.js"></script>
+
+
+</body>
+
+</html>

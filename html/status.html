@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Server Status • Pi Master</title>
+
+
+    <!-- ===========================
+         CSS
+    ============================ -->
+
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/cards.css">
+    <link rel="stylesheet" href="/css/buttons.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Status Page CSS -->
+
+    <link rel="stylesheet" href="/css/status.css?v=3">
+
+</head>
+
+
+<body>
+
+
+<!-- ===========================
+     Navigation
+============================ -->
+
+<nav>
+
+    <div class="nav-container">
+
+
+        <a
+            href="/"
+            class="logo">
+
+            <img
+                src="/images/logo.png"
+                alt="Pi Master Logo">
+
+            <span>
+                Pi Master
+            </span>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a
+                href="/status.html"
+                class="active">
+
+                Status
+
+            </a>
+
+            <a href="/news.html">
+                News
+            </a>
+
+            <a href="/gallery.html">
+                Gallery
+            </a>
+
+            <a href="/community.html">
+                Community
+            </a>
+
+            <a href="/rules.html">
+                Rules
+            </a>
+
+        </div>
+
+
+    </div>
+
+</nav>
+
+
+
+<!-- ===========================
+     Main
+============================ -->
+
+<main class="container-wide">
+
+
+    <!-- ===========================
+         Page Header
+    ============================ -->
+
+    <section class="page-header">
+
+        <div>
+
+            <p class="eyebrow">
+                PI MASTER
+            </p>
+
+            <h1>
+                Server Status
+            </h1>
+
+            <p>
+                Live information about the Pi Master Minecraft server.
+            </p>
+
+        </div>
+
+
+        <div class="status-indicator">
+
+            <span
+                id="status-dot"
+                class="status-dot">
+
+            </span>
+
+            <span id="status-text">
+                Checking server...
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===========================
+         Main Status Cards
+    ============================ -->
+
+    <section class="status-grid">
+
+
+        <!-- Server -->
+
+        <div class="status-large-card">
+
+
+            <div class="status-card-icon">
+                🌐
+            </div>
+
+
+            <div>
+
+                <p class="stat-label">
+                    Server Status
+                </p>
+
+                <h2 id="server-status">
+                    Loading...
+                </h2>
+
+                <p id="server-message">
+                    Checking connection...
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- Players -->
+
+        <div class="status-large-card">
+
+
+            <div class="status-card-icon">
+                👥
+            </div>
+
+
+            <div>
+
+                <p class="stat-label">
+                    Players Online
+                </p>
+
+                <h2 id="player-count">
+                    Loading...
+                </h2>
+
+                <p>
+                    Current players on the server
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- Version -->
+
+        <div class="status-large-card">
+
+
+            <div class="status-card-icon">
+                🎮
+            </div>
+
+
+            <div>
+
+                <p class="stat-label">
+                    Minecraft Version
+                </p>
+
+                <h2 id="server-version">
+                    Loading...
+                </h2>
+
+                <p>
+                    Bedrock Edition
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- Ping -->
+
+        <div class="status-large-card">
+
+
+            <div class="status-card-icon">
+                📡
+            </div>
+
+
+            <div>
+
+                <p class="stat-label">
+                    Ping
+                </p>
+
+                <h2 id="server-ping">
+                    Loading...
+                </h2>
+
+                <p>
+                    Server response time
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ===========================
+         Server Information
+    ============================ -->
+
+    <section class="status-section">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    SERVER INFORMATION
+                </p>
+
+                <h2>
+                    Server Details
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="information-grid">
+
+
+            <div class="information-card">
+
+                <span>
+                    Server Address
+                </span>
+
+                <strong>
+                    pimaster.coeus1.tech
+                </strong>
+
+            </div>
+
+
+            <div class="information-card">
+
+                <span>
+                    Port
+                </span>
+
+                <strong>
+                    19132
+                </strong>
+
+            </div>
+
+
+            <div class="information-card">
+
+                <span>
+                    Edition
+                </span>
+
+                <strong>
+                    Minecraft Bedrock
+                </strong>
+
+            </div>
+
+
+            <div class="information-card">
+
+                <span>
+                    Server Type
+                </span>
+
+                <strong>
+                    Survival
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+    <!-- ===========================
+         Last Updated
+    ============================ -->
+
+    <div class="last-updated">
+
+        <span>
+            Last updated:
+        </span>
+
+        <strong id="last-updated">
+            Checking...
+        </strong>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ===========================
+     Footer
+============================ -->
+
+<footer>
+
+    <div class="container-small">
+
+        <h3>
+            Pi Master
+        </h3>
+
+        <p>
+            Enterprise Minecraft Bedrock Server
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 Pi Master
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ===========================
+     JavaScript
+============================ -->
+
+<script src="/js/status.js"></script>
+
+
+</body>
+
+</html>
