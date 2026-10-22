@@ -35,3 +35,9 @@ The project is organised into separate files for the website, API and supporting
 This is an ongoing project, so features and the design may change as I continue working on it.
 
 The main goal is to make it easy for players to find information about Pi Master without having to ask for updates in-game.
+
+## Copyright
+
+Copyright © 2026 Finley. All rights reserved.
+
+This repository is publicly available for viewing purposes only. No permission is granted to copy, modify, redistribute, or use this project's source code without prior written permission from the copyright holder.
